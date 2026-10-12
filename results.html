@@ -302,15 +302,16 @@ stats"></a></div></noscript>
 		if (newfuck > 30) {ctx.fillText(newfuck + "%", 670, 957.5)}
 
         ctx.font="300 26px Montserrat"
+        ctx.fillText("g4meth.github.io/genvalues", 780, 60)
+        ctx.fillText(version, 780, 90)
         ctx.textAlign="center"
-
         ctx.fillText("Growth Axis: " + document.getElementById("growth-label").innerHTML, 400, 175, 540)
         ctx.fillText("Political Involvement Axis: " + document.getElementById("involvement-label").innerHTML, 400, 295, 540)
         ctx.fillText("Mod Purge Axis: " + document.getElementById("purge-label").innerHTML, 400, 415, 540)
         ctx.fillText("Culture Axis: " + document.getElementById("culture-label").innerHTML, 400, 535, 540)
         ctx.fillText("Government Structure Axis: " + document.getElementById("government-label").innerHTML, 400, 655, 540)
         ctx.fillText("Political Culture Axis: " + document.getElementById("seriousness-label").innerHTML, 400, 775, 540)
-        ctx.fillText("Legacy Axis: " + document.getElementById("legacy-label").innerHTML, 400, 895, 540)
+        ctx.fillText("History Axis: " + document.getElementById("history-label").innerHTML, 400, 895, 540)
 
         document.getElementById("banner").src = c.toDataURL();
     }
