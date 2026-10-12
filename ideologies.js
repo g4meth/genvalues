@@ -7,18 +7,20 @@ ideologies = [
             "mprg": 80,
             "cult": 80,
 			"govt": 80,
-			"seri": 80
+			"seri": 80,
+			"hist": 50
         }
     },
 	{
-        "name": "Social Democracy 🌹",
+        "name": "Left-Mussolinism 𓌏▌",
         "stats": {
             "grow": 65,
             "invo": 65,
             "mprg": 65,
             "cult": 65,
 			"govt": 65,
-			"seri": 65
+			"seri": 65,
+			"hist": 50
         }
     },
 	{
@@ -30,10 +32,11 @@ ideologies = [
             "cult": 50,
 			"govt": 50,
 			"seri": 50,
+			"hist": 50
         }
     },
 	{
-        "name": "Social Democracy 𓌏▌",
+        "name": "Mussolini Thought 𓌏▌",
         "stats": {
             "grow": 35,
             "invo": 35,
@@ -41,6 +44,7 @@ ideologies = [
             "cult": 35,
 			"govt": 50,
 			"seri": 35,
+			"hist": 50
         }
     },
     {
@@ -52,6 +56,7 @@ ideologies = [
             "cult": 20,
 			"govt": 80,
 			"seri": 50,
+			"hist": 50
         }
     },
 	{
@@ -63,6 +68,7 @@ ideologies = [
             "cult": 20,
 			"govt": 20,
 			"seri": 50,
+			"hist": 50
         }
     },
 	{
@@ -74,6 +80,7 @@ ideologies = [
             "cult": 100,
 			"govt": 50,
 			"seri": 50,
+			"hist": 60
         }
     },
 	{
@@ -85,6 +92,7 @@ ideologies = [
             "cult": 15,
 			"govt": 70,
 			"seri": 15,
+			"hist": 50
         }
     },
 ];

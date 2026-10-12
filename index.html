@@ -21,11 +21,12 @@
 <hr>
 <div class="center axis-grid">
     <div class="axis_name sixcolumn">GROWTH</div>
-    <div class="axis_name sixcolumn">SERVER POLITICS</div>
+    <div class="axis_name sixcolumn">POLITICAL INVOLVEMENT</div>
     <div class="axis_name sixcolumn">MOD PURGE</div>
-    <div class="axis_name sixcolumn">PERSONAL CULTURE</div>
+    <div class="axis_name sixcolumn">CULTURE</div>
     <div class="axis_name sixcolumn">GOVERNMENT</div>
-    <div class="axis_name sixcolumn">POLITICAL CULTURE</div>
+    <div class="axis_name sixcolumn">LARP</div>
+	<div class="axis_name sixcolumn">HISTORY</div>
 
     <a href="#anchor"><img class="sixcolumn" src="value_images/open.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/active.svg"></a>
@@ -33,6 +34,7 @@
     <a href="#anchor"><img class="sixcolumn" src="value_images/woke.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/centralized.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/serious.svg"></a>
+	<a href="#anchor"><img class="sixcolumn" src="value_images/ancient.svg"></a>
 
     <a href="#anchor"><img class="sixcolumn" src="value_images/close.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/apathetic.svg"></a>
@@ -40,16 +42,17 @@
     <a href="#anchor"><img class="sixcolumn" src="value_images/chud.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/decentralized.svg"></a>
     <a href="#anchor"><img class="sixcolumn" src="value_images/unserious.svg"></a>
+	<a href="#anchor"><img class="sixcolumn" src="value_images/newfuck.svg"></a>
 </div>
 <br>
 <button class="button" onclick="location.href='instructions.html';" style="font-size:36pt;">Click here to start!</button>
 <br><hr>
 <h2>What is GenValues?</h2>
-    <p>GenValues is a political quiz that attempts to assign percentages for twelve different political values pertaining to the GenUSA discord server. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be compared to the maximum possible for each value, thus giving you a percentage. Answer honestly! This test is a fork of 8values.<br><br>
-    There are <b><u><span id="numOfQuestions">70</span></u></b> questions in the test.</p>
+    <p>GenValues is a political quiz that attempts to assign percentages for fourteen different political values pertaining to the GenUSA discord server. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be compared to the maximum possible for each value, thus giving you a percentage. Answer honestly! This test is a fork of 8values.<br><br>
+    There are <b><u><span id="numOfQuestions">112</span></u></b> questions in the test.</p>
 
-<h2><a id="anchor">What are the twelve values?</a></h2>
-    <p>There are six independent axes - Growth, Server Politics, Mod Purge, Culture, Government Structure, and Political Culture - and each has two opposing values assigned to them. They are:</p>
+<h2><a id="anchor">What are the fourteen values?</a></h2>
+    <p>There are seven independent axes - Growth, Political Involvement, Mod Purge, Culture, Government Structure, Larp, and History - and each has two opposing values assigned to them. They are:</p>
     <div class="explanation_bg">
         <div class="spacer">
             <div class="explanation_blurb_left">
@@ -63,7 +66,7 @@
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#03a9f4;">CLOSED</b></p>
+                <p class="value"><b style="color:#3f51b5;">CLOSED</b></p>
                 <p class="blurb-text">
                     Those with higher Closed growth scores believe that GenUSA should avoid growing the member count relentlessly, to preserve culture and balance. They often support some growth primarily restricted to the friends of current members.
                 </p>
@@ -77,11 +80,11 @@
                 </p>
             </div>
             <div class="explanation_axis">
-                <p class="axis_name">SERVER POLITICS</p>
+                <p class="axis_name">POLITICAL INVOLVEMENT</p>
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#3f51b5;">APATHETIC</b></p>
+                <p class="value"><b style="color:#9c27b0;">APATHETIC</b></p>
                 <p class="blurb-text">
                     Those with higher Apathetic scores do not care abouth the server government and larp. They usually are just here to talk and chill, and don't vote unless they're asked to. They are CATTLE and do not deserve to live.
                 </p>
@@ -99,7 +102,7 @@
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#9c27b0;">KILL THEM ALL</b></p>
+                <p class="value"><b style="color:#FF9EF0;">KILL THEM ALL</b></p>
                 <p class="blurb-text">
                     Those with higher Kill Them All scores believe in firing a large chunk of, or all, of the current admins and mods. They support a mod purge, and feel that the current system is inefficient or restrictive.
                 </p>
@@ -113,11 +116,11 @@
                 </p>
             </div>
             <div class="explanation_axis">
-                <p class="axis_name">PERSONAL CULTURE</p>
+                <p class="axis_name">CULTURE</p>
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#FF9EF0;">CHUD</b></p>
+                <p class="value"><b style="color:#7D5E42;">CHUD</b></p>
                 <p class="blurb-text">
                     Those with higher Chud scores are culturally to the right of GenUSA. They often support Republican or conservative policies in real life, and were more likely to have been a member of the Chud Party.
                 </p>
@@ -127,44 +130,62 @@
             <div class="explanation_blurb_left">
                 <p class="value"><b style="color:#00897b;">CENTRALIZED</b></p>
                 <p class="blurb-text">
-                    Those with higher Centralized scores believe that the server government should have a strong executive branch, with the President having significant authority over government decisions. They typically support concentrating power in the presidency to improve efficiency and reduce legislative gridlock.
+                    Those with higher Centralized scores believe that the government would be better off with a stronger executive, which can rule on its own without interference.
                 </p>
             </div>
             <div class="explanation_axis">
-                <p class="axis_name">GOVERNMENT STRUCTURE</p>
+                <p class="axis_name">GOVERNMENT POWER</p>
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#7D5E42;">DECENTRALIZED</b></p>
+                <p class="value"><b style="color:#4f6570;">DECENTRALIZED</b></p>
                 <p class="blurb-text">
-                    Those with higher Decentralized scores believe that government authority should be divided between multiple independent institutions. They support strong checks and balances, legislative oversight, and limiting the power of the President, even if this makes government less efficient.
+                    Those with higher Decentralized scores believe that the server is better off with a government split between multiple co-equal branches. They support checks and balances.
                 </p>
             </div>
         </div>
 
         <div class="spacer">
             <div class="explanation_blurb_left">
-                <p class="value"><b style="color:#00bcd4;">SERIOUS</b></p>
+                <p class="value"><b style="color:#03a9f4;">SERIOUS</b></p>
                 <p class="blurb-text">
                     Those with higher Serious scores believe that the ideal political platform is a serious one, modeled like a real political party. They support serious and larpy candidates.
                 </p>
             </div>
             <div class="explanation_axis">
-                <p class="axis_name">POLITICAL CULTURE</p>
+                <p class="axis_name">LARP</p>
                 <img class="arrow" src="double_arrow.svg">
             </div>
             <div class="explanation_blurb_right">
-                <p class="value"><b style="color:#607d8b;">UNSERIOUS</b></p>
+                <p class="value"><b style="color:#8b9da6;">UNSERIOUS</b></p>
                 <p class="blurb-text">
                     Those with higher Unserious scores believe that server politics should primarily be entertaining rather than realistic. They support joke candidates over serious candidates.
                 </p>
             </div>
         </div>
+		<div class="spacer">
+            <div class="explanation_blurb_left">
+                <p class="value"><b style="color:#2b82e0;">ANCIENT</b></p>
+                <p class="blurb-text">
+                    Those with higher Ancient scores are longtime members, who were there for foundational events such as the Aquitos Riots, 9/14, or maybe even the founding of the server.
+                </p>
+            </div>
+            <div class="explanation_axis">
+                <p class="axis_name">HISTORY</p>
+                <img class="arrow" src="double_arrow.svg">
+            </div>
+            <div class="explanation_blurb_right">
+                <p class="value"><b style="color:#ffffff;">NEWFUCK</b></p>
+                <p class="blurb-text">
+                Those with higher Newfuck scores are members of GenUSA who joined recently, who missed out on the Golden Age of GenUSA. They are inherently worse than older users.
+        </p>
+    </div>
+</div>
         <br>
     </div>
 
 <h2 style="margin-top: 17pt;">What's the "Closest Match" mean at the bottom of the results?</h2>
-    <p>In addition to matching you to the 12 values, the quiz also attempts to match you to some random ideology. Take this part seriously, its the most important part for determining your self worth.</p>
+    <p>In addition to matching you to the 14 values, the quiz also attempts to match you to some random ideology. Take this part seriously, its the most important part for determining your self worth.</p>
 <h2>I don't like my scores!</h2>
     <p>Fuck you KKKhud<br></p>
 <h2>Who made this?</h2>

@@ -56,12 +56,20 @@
     <img height="128pt" src="value_images/decentralized.svg" id="img-decentralized">
 </div>
 
-<h2>Political Culture Axis: <span class="weight-300" id="seriousness-label"></span></h2>
+<h2>Larp Axis: <span class="weight-300" id="seriousness-label"></span></h2>
 <div class="axis">
     <img height="128pt" src="value_images/serious.svg" id="img-serious">
     <div class="bar serious" id="bar-serious"><div class="text-wrapper" id="serious">NaN%</div></div>
     <div class="bar unserious" id="bar-unserious"><div class="text-wrapper" id="unserious">NaN%</div></div>
     <img height="128pt" src="value_images/unserious.svg" id="img-unserious">
+</div>
+
+<h2>History Axis: <span class="weight-300" id="history-label"></span></h2>
+<div class="axis">
+    <img height="128pt" src="value_images/ancient.svg" id="img-ancient">
+    <div class="bar ancient" id="bar-ancient"><div class="text-wrapper" id="ancient">NaN%</div></div>
+    <div class="bar newfuck" id="bar-newfuck"><div class="text-wrapper" id="newfuck">NaN%</div></div>
+    <img height="128pt" src="value_images/newfuck.svg" id="img-newfuck">
 </div>
 
 <h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
@@ -105,12 +113,13 @@ stats"></a></div></noscript>
         }
     }
 
-    growArray = ["Great Replacement Advocate","Pro-Growth","Steady Growth","Moderate","Immigration Skeptic","Nativist","GenUSA Hypernationalist"]
+    growArray = ["Great Replacement Advocate","Pro-Growth","Steady Growth","Moderate","Immigration Skeptic","Nativist","Hypernationalist"]
     invoArray = ["'We have a government?'","Lurker","Unaware","Just here to grill","Median Voter","Monitoring the Situation","We're gonna vote vote vote it's our moment"]
     mprgArray = ["Deepstate Agent","Sandwich's Strongest Soldier","Slightly Pro-Mod","Unprincipled","I want to say slurs in #general","MOD PURGE, MOD PURGE, I HATE THE MODERATION TEAM","Genuinely kill every single mod"]
     cultArray = ["Adolf Hitler","Gladorix Disciple","A little bit chuddy","Centrist","A little bit woke","Resident of Portland, Oregon","Joseph Stalin"]
     govtArray = ["Adolf Hitler again","Step on me","Government 🤤","I have no opinions on anything","Libertarian or something","One thing: I'm not a big fan of the government","30 on 30 on 30 on 30"]
     seriArray = ["Autism","THIS IS MY SERIOUS HAT","You will larp politics and you will like it","Welcome to Politics brother","Its not that serious","I hate you","Autism"]
+	histArray = ["Native GenAmerican","GenUSA Old Stock","Citizen of GenUSA","Reeducation Camp needed","Glup Shitto","Actual genuine child","Septuple Platinum Certified Newfuck"]
 
     function setLabel(val,ary) {
         if (val > 100) { return "" } else
@@ -130,6 +139,7 @@ stats"></a></div></noscript>
     woke = getQueryVariable("c")
     centralized = getQueryVariable("v")
     serious = getQueryVariable("s")
+	ancient = getQueryVariable("h")
 
     close = (100 - open).toFixed(1)
     apathetic = (100 - active).toFixed(1)
@@ -137,6 +147,7 @@ stats"></a></div></noscript>
     chud = (100 - woke).toFixed(1)
     decentralized = (100 - centralized).toFixed(1)
     unserious = (100 - serious).toFixed(1)
+	newfuck = (100 - ancient).toFixed(1)
 
     setBarValue("open", open)
     setBarValue("close", close)
@@ -150,6 +161,8 @@ stats"></a></div></noscript>
     setBarValue("decentralized", decentralized)
     setBarValue("serious", serious)
     setBarValue("unserious", unserious)
+	setBarValue("ancient", ancient)
+    setBarValue("newfuck", newfuck)
 
     document.getElementById("growth-label").innerHTML = setLabel(open, growArray)
     document.getElementById("involvement-label").innerHTML = setLabel(apathetic, invoArray)
@@ -157,17 +170,19 @@ stats"></a></div></noscript>
     document.getElementById("culture-label").innerHTML = setLabel(chud, cultArray)
     document.getElementById("government-label").innerHTML = setLabel(centralized, govtArray)
     document.getElementById("seriousness-label").innerHTML = setLabel(serious, seriArray)
+	document.getElementById("history-label").innerHTML = setLabel(ancient, histArray)
 
     ideology = ""
     ideodist = Infinity
     for (var i = 0; i < ideologies.length; i++) {
         dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.grow - open), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.invo - active), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.mprg - deepstate), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.cult - chud), 1.73856063)
-        dist += Math.pow(Math.abs((ideologies[i].stats.govt ?? 50) - centralized), 2)
-        dist += Math.pow(Math.abs((ideologies[i].stats.seri ?? 50) - serious), 2)
+        dist += Math.pow(Math.abs((ideologies[i].stats.grow ?? 50) - open), 2)
+    dist += Math.pow(Math.abs((ideologies[i].stats.invo ?? 50) - active), 2)
+    dist += Math.pow(Math.abs((ideologies[i].stats.mprg ?? 50) - deepstate), 1.73856063)
+    dist += Math.pow(Math.abs((ideologies[i].stats.cult ?? 50) - woke), 1.73856063)
+    dist += Math.pow(Math.abs((ideologies[i].stats.govt ?? 50) - centralized), 2)
+    dist += Math.pow(Math.abs((ideologies[i].stats.seri ?? 50) - serious), 2)
+    dist += Math.pow(Math.abs((ideologies[i].stats.hist ?? 50) - ancient), 2)
         if (dist < ideodist) {
             ideology = ideologies[i].name
             ideodist = dist
@@ -187,9 +202,9 @@ stats"></a></div></noscript>
         var c = document.createElement("canvas")
         var ctx = c.getContext("2d")
         c.width = 800;
-        c.height = 890;
+        c.height = 1010;
         ctx.fillStyle = "#EEEEEE"
-        ctx.fillRect(0,0,800,890);
+        ctx.fillRect(0,0,800,1010);
 
         img = document.getElementById("img-open")
         ctx.drawImage(img, 20, 170, 100, 100);
@@ -215,6 +230,10 @@ stats"></a></div></noscript>
         if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 20, 770, 100, 100)
         img = document.getElementById("img-unserious")
         if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 680, 770, 100, 100)
+		img = document.getElementById("img-ancient")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 20, 890, 100, 100)
+        img = document.getElementById("img-newfuck")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 680, 890, 100, 100)
 
         ctx.fillStyle="#222222"
         ctx.fillRect(120, 180, 560, 80)
@@ -223,6 +242,7 @@ stats"></a></div></noscript>
         ctx.fillRect(120, 540, 560, 80)
         ctx.fillRect(120, 660, 560, 80)
         ctx.fillRect(120, 780, 560, 80)
+		ctx.fillRect(120, 900, 560, 80)
 
         ctx.fillStyle="#f44336"
         ctx.fillRect(120, 184, 5.6*open-2, 72)
@@ -250,6 +270,11 @@ stats"></a></div></noscript>
         ctx.fillRect(120, 784, 5.6*serious-2, 72)
         ctx.fillStyle="#607d8b"
         ctx.fillRect(682-5.6*unserious, 784, 5.6*unserious-2, 72)
+		
+		ctx.fillStyle = "#e91e63"
+		ctx.fillRect(120, 904, 5.6*ancient-2, 72)
+		ctx.fillStyle = "#4caf50"
+		ctx.fillRect(682-5.6*newfuck, 904, 5.6*newfuck-2, 72)
 
         ctx.fillStyle="#222222"
         ctx.font="700 80px Montserrat"
@@ -265,6 +290,7 @@ stats"></a></div></noscript>
         if (woke > 30) {ctx.fillText(woke + "%", 130, 597.5)}
         if (centralized > 30) {ctx.fillText(centralized + "%", 130, 717.5)}
         if (serious > 30) {ctx.fillText(serious + "%", 130, 837.5)}
+		if (ancient > 30) {ctx.fillText(ancient + "%", 130, 957.5)}
 
         ctx.textAlign="right"
         if (close > 30) {ctx.fillText(close + "%", 670, 237.5)}
@@ -273,6 +299,7 @@ stats"></a></div></noscript>
         if (chud > 30) {ctx.fillText(chud + "%", 670, 597.5)}
         if (decentralized > 30) {ctx.fillText(decentralized + "%", 670, 717.5)}
         if (unserious > 30) {ctx.fillText(unserious + "%", 670, 837.5)}
+		if (newfuck > 30) {ctx.fillText(newfuck + "%", 670, 957.5)}
 
         ctx.font="300 30px Montserrat"
         ctx.fillText("8values.github.io", 780, 60)
@@ -284,6 +311,7 @@ stats"></a></div></noscript>
         ctx.fillText("Culture Axis: " + document.getElementById("culture-label").innerHTML, 400, 535)
         ctx.fillText("Government Structure Axis: " + document.getElementById("government-label").innerHTML, 400, 655)
         ctx.fillText("Political Culture Axis: " + document.getElementById("seriousness-label").innerHTML, 400, 775)
+		ctx.fillText("History Axis: " + document.getElementById("history-label").innerHTML, 400, 895)
 
         document.getElementById("banner").src = c.toDataURL();
     }

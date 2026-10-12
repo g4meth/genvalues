@@ -232,7 +232,7 @@ div.open {
 }
 
 div.close {
-    background-color: #03a9f4;
+    background-color: #3f51b5;
     text-align: right;
     border-left-style: solid;
 }
@@ -244,7 +244,7 @@ div.active {
 }
 
 div.apathetic {
-    background-color: #3f51b5;
+    background-color: #9c27b0;
     text-align: right;
     border-left-style: solid;
 }
@@ -256,7 +256,7 @@ div.deepstate {
 }
 
 div.killthemall {
-    background-color: #9c27b0;
+    background-color: #FF9EF0;
     text-align: right;
     border-left-style: solid;
 }
@@ -268,7 +268,7 @@ div.woke {
 }
 
 div.chud {
-    background-color: #FF9EF0;
+    background-color: #7D5E42;
     text-align: right;
     border-left-style: solid;
 }
@@ -280,19 +280,31 @@ div.centralized {
 }
 
 div.decentralized {
-    background-color: #7D5E42;
+    background-color: #4f6570;
     text-align: right;
     border-left-style: solid;
 }
 
 div.serious {
-    background-color: #00bcd4;
+    background-color: #03a9f4;
     text-align: left;
     border-right-style: solid;
 }
 
 div.unserious {
-    background-color: #607d8b;
+    background-color: #8b9da6;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.ancient {
+    background-color: #2b82e0;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.newfuck {
+    background-color: #ffffff;
     text-align: right;
     border-left-style: solid;
 }
@@ -318,7 +330,7 @@ span.weight-300 {
 /* Six-axis layout on the homepage */
 .center.axis-grid {
     display: grid !important;
-    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
     grid-template-rows: auto auto auto;
     gap: 10px;
     width: 100%;
@@ -357,7 +369,7 @@ span.weight-300 {
 .center.axis-grid img.sixcolumn {
     display: block;
     width: 100%;
-    max-width: 110px;
+    max-width: clamp(32px, 12vw, 512px);
     height: auto;
     float: none;
     margin: 0 auto;
@@ -365,3 +377,17 @@ span.weight-300 {
     object-fit: contain;
     box-sizing: border-box;
 }
+
+h1 {
+    white-space: nowrap;
+    font-size: clamp(32px, 6vw, 96px);
+}
+
+/* Smooth icon enlargement */
+.axis-grid img.sixcolumn {
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Enlarge icons when hovered over */
+.axis-grid a:hover img.sixcolumn {
+    transform: scale(1.05);

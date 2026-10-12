@@ -48,14 +48,15 @@ stats"></a></div></noscript>
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_grow, max_invo, max_mprg, max_cult, max_govt, max_seri; // Max possible scores
-    max_grow = max_invo = max_mprg = max_cult = max_govt = max_seri = 0;
+    var max_grow, max_invo, max_mprg, max_cult, max_govt, max_seri, max_hist; // Max possible scores
+    max_grow = max_invo = max_mprg = max_cult = max_govt = max_seri = max_hist = 0;
     let grow_array = new Array(questions.length);
     let invo_array = new Array(questions.length);
     let mprg_array = new Array(questions.length);
     let cult_array = new Array(questions.length);
     let govt_array = new Array(questions.length);
     let seri_array = new Array(questions.length);
+	let hist_array = new Array(questions.length);
     var qn = 0; // Question number
     init_question();
     for (var i = 0; i < questions.length; i++) {
@@ -65,6 +66,7 @@ stats"></a></div></noscript>
         max_cult += Math.abs(questions[i].effect.cult)
         max_govt += Math.abs(questions[i].effect.govt)
         max_seri += Math.abs(questions[i].effect.seri)
+		max_hist += Math.abs(questions[i].effect.hist)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -86,6 +88,7 @@ stats"></a></div></noscript>
         cult_array[qn] = mult*questions[qn].effect.cult
         govt_array[qn] = mult*questions[qn].effect.govt
         seri_array[qn] = mult*questions[qn].effect.seri
+		hist_array[qn] = mult*questions[qn].effect.hist
         qn++;
         if (qn < questions.length) {
             init_question();
@@ -113,6 +116,7 @@ stats"></a></div></noscript>
         let final_cult = cult_array.reduce((a, b) => a + b, 0)
         let final_govt = govt_array.reduce((a, b) => a + b, 0)
         let final_seri = seri_array.reduce((a, b) => a + b, 0)
+		let final_hist = hist_array.reduce((a, b) => a + b, 0)
         location.href = `results.html`
             + `?g=${calc_score(final_grow,max_grow)}`
             + `&i=${calc_score(final_invo,max_invo)}`
@@ -120,6 +124,7 @@ stats"></a></div></noscript>
             + `&c=${calc_score(final_cult,max_cult)}`
             + `&v=${calc_score(final_govt,max_govt)}`
             + `&s=${calc_score(final_seri,max_seri)}`
+			+ `&h=${calc_score(final_hist,max_hist)}`
     }
 </script>
 </body>
