@@ -96,7 +96,7 @@ ideologies = [
         }
     },
 	{
-        "name": "DNC Warrior 🫏",
+        "name": "Social Fascism 🌹",
         "stats": {
             "grow": 60,
             "invo": 80,
@@ -108,7 +108,7 @@ ideologies = [
         }
     },
 	{
-        "name": "MAGA Patriot 🐘",
+        "name": "Classical Fascism 𓌏▌",
         "stats": {
             "grow": 30,
             "invo": 80,
