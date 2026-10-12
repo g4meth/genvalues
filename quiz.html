@@ -1,0 +1,125 @@
+<head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+<link href='style.css' rel='stylesheet' type='text/css'>
+<title>GenValues Quiz</title>
+<link rel="icon" type="x-icon" href="icon.png">
+<link rel="shortcut icon" type="x-icon" href="icon.png">
+<meta charset="utf-8">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6511426299019766",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body>
+<script type="application/javascript"
+        src="questions.js">
+</script>
+<h1>🇺🇸 GenValues 🇺🇸</h1>
+<hr>
+<h2 style="text-align:center;" id="question-number">Loading...</h2>
+<p class="question" id="question-text"></p>
+<button class="button stronglyAgree" onclick="next_question( 1.0)">Strongly Agree</button> <br>
+<button class="button agree" onclick="next_question( 0.5)">Agree</button> <br>
+<button class="button neutral" onclick="next_question( 0.0)">Neutral/Unsure</button> <br>
+<button class="button disagree" onclick="next_question(-0.5)">Disagree</button> <br>
+<button class="button stronglyDisagree" onclick="next_question(-1.0)">Strongly Disagree</button> <br>
+<button class="small_button" onclick="prev_question()" id="back_button">Back</button>
+<button class="small_button_off" id="back_button_off">Back</button><br>
+
+<!-- Website visit statistics - no personal information is collected! -->
+<script type="text/javascript">
+var sc_project=11325211;
+var sc_invisible=1;
+var sc_security="fd9f0659";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web stats"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11325211/0/fd9f0659/1/" alt="web
+stats"></a></div></noscript>
+
+<!-- JavaScript for the test itself -->
+<script>
+    var max_grow, max_invo, max_mprg, max_cult, max_govt, max_seri; // Max possible scores
+    max_grow = max_invo = max_mprg = max_cult = max_govt = max_seri = 0;
+    let grow_array = new Array(questions.length);
+    let invo_array = new Array(questions.length);
+    let mprg_array = new Array(questions.length);
+    let cult_array = new Array(questions.length);
+    let govt_array = new Array(questions.length);
+    let seri_array = new Array(questions.length);
+    var qn = 0; // Question number
+    init_question();
+    for (var i = 0; i < questions.length; i++) {
+        max_grow += Math.abs(questions[i].effect.grow)
+        max_invo += Math.abs(questions[i].effect.invo)
+        max_mprg += Math.abs(questions[i].effect.mprg)
+        max_cult += Math.abs(questions[i].effect.cult)
+        max_govt += Math.abs(questions[i].effect.govt)
+        max_seri += Math.abs(questions[i].effect.seri)
+    }
+    function init_question() {
+        document.getElementById("question-text").innerHTML = questions[qn].question;
+        document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (questions.length);
+        if (qn == 0) {
+            document.getElementById("back_button").style.display = 'none';
+            document.getElementById("back_button_off").style.display = 'block';
+        } else {
+            document.getElementById("back_button").style.display = 'block';
+            document.getElementById("back_button_off").style.display = 'none';
+        }
+
+    }
+
+    function next_question(mult) {
+        grow_array[qn] = mult*questions[qn].effect.grow
+        invo_array[qn] = mult*questions[qn].effect.invo
+        mprg_array[qn] = mult*questions[qn].effect.mprg
+        cult_array[qn] = mult*questions[qn].effect.cult
+        govt_array[qn] = mult*questions[qn].effect.govt
+        seri_array[qn] = mult*questions[qn].effect.seri
+        qn++;
+        if (qn < questions.length) {
+            init_question();
+        } else {
+            results();
+        }
+    }
+
+    function prev_question() {
+        if (qn == 0) {
+            return;
+        }
+        qn--;
+        init_question();
+    }
+
+    function calc_score(score,max) {
+        return (100*(max+score)/(2*max)).toFixed(1)
+    }
+
+    function results() {
+        let final_grow = grow_array.reduce((a, b) => a + b, 0)
+        let final_invo = invo_array.reduce((a, b) => a + b, 0)
+        let final_mprg = mprg_array.reduce((a, b) => a + b, 0)
+        let final_cult = cult_array.reduce((a, b) => a + b, 0)
+        let final_govt = govt_array.reduce((a, b) => a + b, 0)
+        let final_seri = seri_array.reduce((a, b) => a + b, 0)
+        location.href = `results.html`
+            + `?g=${calc_score(final_grow,max_grow)}`
+            + `&i=${calc_score(final_invo,max_invo)}`
+            + `&p=${calc_score(final_mprg,max_mprg)}`
+            + `&c=${calc_score(final_cult,max_cult)}`
+            + `&v=${calc_score(final_govt,max_govt)}`
+            + `&s=${calc_score(final_seri,max_seri)}`
+    }
+</script>
+</body>

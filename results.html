@@ -1,0 +1,292 @@
+
+<html><head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>GenValues Results</title>
+<link rel="icon" type="x-icon" href="icon.png">
+<link rel="shortcut icon" type="x-icon" href="icon.png">
+<meta charset="utf-8">
+<script>
+  version = "Test Edition #1" //Remember to update this before making changes to the test itself!
+</script>
+<script type="application/javascript" src="ideologies.js">
+</script></head>
+
+
+<body>
+<h1>🇺🇸 GenValues 🇺🇸</h1>
+<hr>
+
+<h1>Results</h1>
+
+<h2>Growth Axis: <span class="weight-300" id="growth-label"></span></h2>
+<div class="axis">
+    <img height="128pt" src="value_images/open.svg" id="img-open">
+    <div class="bar open" id="bar-open"><div class="text-wrapper" id="open">NaN%</div></div>
+    <div class="bar close" id="bar-close"><div class="text-wrapper" id="close">NaN%</div></div>
+    <img height="128pt" src="value_images/close.svg" id="img-close">
+</div>
+<h2>Political Involvement Axis: <span class="weight-300" id="involvement-label"></span></h2>
+<div class="axis">
+    <img height="128pt" src="value_images/active.svg" id="img-active">
+    <div class="bar active" id="bar-active"><div class="text-wrapper" id="active">NaN%</div></div>
+    <div class="bar apathetic" id="bar-apathetic"><div class="text-wrapper" id="apathetic">NaN%</div></div>
+    <img height="128pt" src="value_images/apathetic.svg" id="img-apathetic">
+</div>
+<h2>Mod Purge Axis: <span class="weight-300" id="purge-label"></span></h2>
+<div class="axis">
+    <img height="128pt" id="img-deepstate" src="value_images/deepstate.svg">
+    <div class="bar deepstate" id="bar-deepstate"><div class="text-wrapper" id="deepstate">NaN%</div></div>
+    <div class="bar killthemall" id="bar-killthemall"><div class="text-wrapper" id="killthemall">NaN%</div></div>
+    <img height="128pt" src="value_images/killthemall.svg" id="img-killthemall">
+</div>
+<h2>Culture Axis: <span class="weight-300" id="culture-label"></span></h2>
+<div class="axis">
+    <img id="img-woke" src="value_images/woke.svg" height="128pt">
+    <div id="bar-woke" class="bar woke"><div class="text-wrapper" id="woke">NaN%</div></div>
+    <div class="bar chud" id="bar-chud"><div class="text-wrapper" id="chud">NaN%</div></div>
+    <img id="img-chud" src="value_images/chud.svg" height="128pt">
+</div>
+
+<h2>Government Structure Axis: <span class="weight-300" id="government-label"></span></h2>
+<div class="axis">
+    <img height="128pt" src="value_images/centralized.svg" id="img-centralized">
+    <div class="bar centralized" id="bar-centralized"><div class="text-wrapper" id="centralized">NaN%</div></div>
+    <div class="bar decentralized" id="bar-decentralized"><div class="text-wrapper" id="decentralized">NaN%</div></div>
+    <img height="128pt" src="value_images/decentralized.svg" id="img-decentralized">
+</div>
+
+<h2>Political Culture Axis: <span class="weight-300" id="seriousness-label"></span></h2>
+<div class="axis">
+    <img height="128pt" src="value_images/serious.svg" id="img-serious">
+    <div class="bar serious" id="bar-serious"><div class="text-wrapper" id="serious">NaN%</div></div>
+    <div class="bar unserious" id="bar-unserious"><div class="text-wrapper" id="unserious">NaN%</div></div>
+    <img height="128pt" src="value_images/unserious.svg" id="img-unserious">
+</div>
+
+<h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
+<p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
+<p></p>
+<hr>
+<img src="" id="banner">
+<button class="button" onclick="location.href='index.html';">Back</button> <br>
+<!-- Website visit statistics - no personal information is collected! -->
+<script type="text/javascript">
+var sc_project=11325211;
+var sc_invisible=1;
+var sc_security="fd9f0659";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="web stats" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11325211/0/fd9f0659/1/" alt="web
+stats"></a></div></noscript>
+<script>
+    function getQueryVariable(variable)
+    {
+           var query = window.location.search.substring(1)
+           var vars = query.split("&")
+           for (var i=0;i<vars.length;i++) {
+                   var pair = vars[i].split("=")
+                   if(pair[0] == variable) {return pair[1]}
+           }
+           return(NaN);
+    }
+
+    function setBarValue(name, value) {
+        innerel = document.getElementById(name)
+        outerel = document.getElementById("bar-" + name)
+        outerel.style.width = (value + "%")
+        innerel.innerHTML = (value + "%")
+        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
+            innerel.style.visibility = "hidden"
+        }
+    }
+
+    growArray = ["Great Replacement Advocate","Pro-Growth","Steady Growth","Moderate","Immigration Skeptic","Nativist","GenUSA Hypernationalist"]
+    invoArray = ["'We have a government?'","Lurker","Unaware","Just here to grill","Median Voter","Monitoring the Situation","We're gonna vote vote vote it's our moment"]
+    mprgArray = ["Deepstate Agent","Sandwich's Strongest Soldier","Slightly Pro-Mod","Unprincipled","I want to say slurs in #general","MOD PURGE, MOD PURGE, I HATE THE MODERATION TEAM","Genuinely kill every single mod"]
+    cultArray = ["Adolf Hitler","Gladorix Disciple","A little bit chuddy","Centrist","A little bit woke","Resident of Portland, Oregon","Joseph Stalin"]
+    govtArray = ["Adolf Hitler again","Step on me","Government 🤤","I have no opinions on anything","Libertarian or something","One thing: I'm not a big fan of the government","30 on 30 on 30 on 30"]
+    seriArray = ["Autism","THIS IS MY SERIOUS HAT","You will larp politics and you will like it","Welcome to Politics brother","Its not that serious","I hate you","Autism"]
+
+    function setLabel(val,ary) {
+        if (val > 100) { return "" } else
+        if (val > 85) { return ary[0] } else
+        if (val > 65) { return ary[1] } else
+        if (val > 55) { return ary[2] } else
+        if (val >= 45) { return ary[3] } else
+        if (val >= 35) { return ary[4] } else
+        if (val >= 15) { return ary[5] } else
+        if (val >= 0) { return ary[6] } else
+            {return ""}
+    }
+
+    open = getQueryVariable("g")
+    active = getQueryVariable("i")
+    deepstate = getQueryVariable("p")
+    woke = getQueryVariable("c")
+    centralized = getQueryVariable("v")
+    serious = getQueryVariable("s")
+
+    close = (100 - open).toFixed(1)
+    apathetic = (100 - active).toFixed(1)
+    killthemall = (100 - deepstate).toFixed(1)
+    chud = (100 - woke).toFixed(1)
+    decentralized = (100 - centralized).toFixed(1)
+    unserious = (100 - serious).toFixed(1)
+
+    setBarValue("open", open)
+    setBarValue("close", close)
+    setBarValue("apathetic", apathetic)
+    setBarValue("active", active)
+    setBarValue("deepstate", deepstate)
+    setBarValue("killthemall", killthemall)
+    setBarValue("chud", chud)
+    setBarValue("woke", woke)
+    setBarValue("centralized", centralized)
+    setBarValue("decentralized", decentralized)
+    setBarValue("serious", serious)
+    setBarValue("unserious", unserious)
+
+    document.getElementById("growth-label").innerHTML = setLabel(open, growArray)
+    document.getElementById("involvement-label").innerHTML = setLabel(apathetic, invoArray)
+    document.getElementById("purge-label").innerHTML = setLabel(deepstate, mprgArray)
+    document.getElementById("culture-label").innerHTML = setLabel(chud, cultArray)
+    document.getElementById("government-label").innerHTML = setLabel(centralized, govtArray)
+    document.getElementById("seriousness-label").innerHTML = setLabel(serious, seriArray)
+
+    ideology = ""
+    ideodist = Infinity
+    for (var i = 0; i < ideologies.length; i++) {
+        dist = 0
+        dist += Math.pow(Math.abs(ideologies[i].stats.grow - open), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.invo - active), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.mprg - deepstate), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.cult - chud), 1.73856063)
+        dist += Math.pow(Math.abs((ideologies[i].stats.govt ?? 50) - centralized), 2)
+        dist += Math.pow(Math.abs((ideologies[i].stats.seri ?? 50) - serious), 2)
+        if (dist < ideodist) {
+            ideology = ideologies[i].name
+            ideodist = dist
+        }
+    }
+    document.getElementById("ideology-label").innerHTML = ideology
+
+    function createImage(src, x, y, w, h) {
+        img = new Image ()
+        img.src = src
+        img.onload = function() {
+            ctx.drawImage(img, x, y, w, h)
+        }
+    }
+
+    window.onload = function() {
+        var c = document.createElement("canvas")
+        var ctx = c.getContext("2d")
+        c.width = 800;
+        c.height = 890;
+        ctx.fillStyle = "#EEEEEE"
+        ctx.fillRect(0,0,800,890);
+
+        img = document.getElementById("img-open")
+        ctx.drawImage(img, 20, 170, 100, 100);
+        img = document.getElementById("img-close")
+        ctx.drawImage(img, 680, 170, 100, 100)
+        img = document.getElementById("img-active")
+        ctx.drawImage(img, 20, 290, 100, 100)
+        img = document.getElementById("img-apathetic")
+        ctx.drawImage(img, 680, 290, 100, 100)
+        img = document.getElementById("img-deepstate")
+        ctx.drawImage(img, 20, 410, 100, 100)
+        img = document.getElementById("img-killthemall")
+        ctx.drawImage(img, 680, 410, 100, 100)
+        img = document.getElementById("img-woke")
+        ctx.drawImage(img, 20, 530, 100, 100)
+        img = document.getElementById("img-chud")
+        ctx.drawImage(img, 680, 530, 100, 100)
+        img = document.getElementById("img-centralized")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 20, 650, 100, 100)
+        img = document.getElementById("img-decentralized")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 680, 650, 100, 100)
+        img = document.getElementById("img-serious")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 20, 770, 100, 100)
+        img = document.getElementById("img-unserious")
+        if (img.complete && img.naturalWidth > 0) ctx.drawImage(img, 680, 770, 100, 100)
+
+        ctx.fillStyle="#222222"
+        ctx.fillRect(120, 180, 560, 80)
+        ctx.fillRect(120, 300, 560, 80)
+        ctx.fillRect(120, 420, 560, 80)
+        ctx.fillRect(120, 540, 560, 80)
+        ctx.fillRect(120, 660, 560, 80)
+        ctx.fillRect(120, 780, 560, 80)
+
+        ctx.fillStyle="#f44336"
+        ctx.fillRect(120, 184, 5.6*open-2, 72)
+        ctx.fillStyle="#00897b"
+        ctx.fillRect(682-5.6*close, 184, 5.6*close-2, 72)
+        ctx.fillStyle="#ff9800"
+        ctx.fillRect(120, 304, 5.6*active-2, 72)
+        ctx.fillStyle="#03a9f4"
+        ctx.fillRect(682-5.6*apathetic, 304, 5.6*apathetic-2, 72)
+        ctx.fillStyle="#ffeb3b"
+        ctx.fillRect(120, 424, 5.6*deepstate-2, 72)
+        ctx.fillStyle="#3f51b5"
+        ctx.fillRect(682-5.6*killthemall, 424, 5.6*killthemall-2, 72)
+        ctx.fillStyle="#8bc34a"
+        ctx.fillRect(120, 544, 5.6*woke-2, 72)
+        ctx.fillStyle="#9c27b0"
+        ctx.fillRect(682-5.6*chud, 544, 5.6*chud-2, 72)
+
+        ctx.fillStyle="#00bcd4"
+        ctx.fillRect(120, 664, 5.6*centralized-2, 72)
+        ctx.fillStyle="#795548"
+        ctx.fillRect(682-5.6*decentralized, 664, 5.6*decentralized-2, 72)
+
+        ctx.fillStyle="#ffc107"
+        ctx.fillRect(120, 784, 5.6*serious-2, 72)
+        ctx.fillStyle="#607d8b"
+        ctx.fillRect(682-5.6*unserious, 784, 5.6*unserious-2, 72)
+
+        ctx.fillStyle="#222222"
+        ctx.font="700 80px Montserrat"
+        ctx.textAlign="left"
+        ctx.fillText("GenValues", 20, 90)
+        ctx.font="50px Montserrat"
+        ctx.fillText(ideology, 20, 140)
+
+        ctx.textAlign="left"
+        if (open > 30) {ctx.fillText(open + "%", 130, 237.5)}
+        if (active > 30) {ctx.fillText(active + "%", 130, 357.5)}
+        if (deepstate > 30) {ctx.fillText(deepstate + "%", 130, 477.5)}
+        if (woke > 30) {ctx.fillText(woke + "%", 130, 597.5)}
+        if (centralized > 30) {ctx.fillText(centralized + "%", 130, 717.5)}
+        if (serious > 30) {ctx.fillText(serious + "%", 130, 837.5)}
+
+        ctx.textAlign="right"
+        if (close > 30) {ctx.fillText(close + "%", 670, 237.5)}
+        if (apathetic > 30) {ctx.fillText(apathetic + "%", 670, 357.5)}
+        if (killthemall > 30) {ctx.fillText(killthemall + "%", 670, 477.5)}
+        if (chud > 30) {ctx.fillText(chud + "%", 670, 597.5)}
+        if (decentralized > 30) {ctx.fillText(decentralized + "%", 670, 717.5)}
+        if (unserious > 30) {ctx.fillText(unserious + "%", 670, 837.5)}
+
+        ctx.font="300 30px Montserrat"
+        ctx.fillText("8values.github.io", 780, 60)
+        ctx.fillText(version, 780, 90)
+        ctx.textAlign="center"
+        ctx.fillText("Growth Axis: " + document.getElementById("growth-label").innerHTML, 400, 175)
+        ctx.fillText("Political Involvement Axis: " + document.getElementById("involvement-label").innerHTML, 400, 295)
+        ctx.fillText("Mod Purge Axis: " + document.getElementById("purge-label").innerHTML, 400, 415)
+        ctx.fillText("Culture Axis: " + document.getElementById("culture-label").innerHTML, 400, 535)
+        ctx.fillText("Government Structure Axis: " + document.getElementById("government-label").innerHTML, 400, 655)
+        ctx.fillText("Political Culture Axis: " + document.getElementById("seriousness-label").innerHTML, 400, 775)
+
+        document.getElementById("banner").src = c.toDataURL();
+    }
+</script>
+
+</body></html>
