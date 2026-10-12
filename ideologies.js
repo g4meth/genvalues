@@ -91,7 +91,31 @@ ideologies = [
             "mprg": 15,
             "cult": 15,
 			"govt": 70,
-			"seri": 15,
+			"seri": 50,
+			"hist": 50
+        }
+    },
+	{
+        "name": "DNC Warrior 🫏",
+        "stats": {
+            "grow": 60,
+            "invo": 80,
+            "mprg": 60,
+            "cult": 70,
+			"govt": 30,
+			"seri": 50,
+			"hist": 50
+        }
+    },
+	{
+        "name": "MAGA Patriot 🐘",
+        "stats": {
+            "grow": 30,
+            "invo": 80,
+            "mprg": 40,
+            "cult": 30,
+			"govt": 40,
+			"seri": 50,
 			"hist": 50
         }
     },

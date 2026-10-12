@@ -277,7 +277,7 @@ questions = [
     },
     {
         "question": "New users should adapt to our culture.",
-        "effect": {"grow": -5, "invo": 0, "mprg": 0, "cult": -10, "govt": 0, "seri": 0, "hist": 5}
+        "effect": {"grow": -5, "invo": 0, "mprg": 0, "cult": -5, "govt": 0, "seri": 0, "hist": 10}
     },
     {
         "question": "Transitioning from our presidential system to a new form of government would be preferable.",

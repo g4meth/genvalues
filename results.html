@@ -48,7 +48,7 @@
     <img id="img-chud" src="value_images/chud.svg" height="128pt">
 </div>
 
-<h2>Government Structure Axis: <span class="weight-300" id="government-label"></span></h2>
+<h2>Government Power Axis: <span class="weight-300" id="government-label"></span></h2>
 <div class="axis">
     <img height="128pt" src="value_images/centralized.svg" id="img-centralized">
     <div class="bar centralized" id="bar-centralized"><div class="text-wrapper" id="centralized">NaN%</div></div>
@@ -302,16 +302,16 @@ stats"></a></div></noscript>
 		if (newfuck > 30) {ctx.fillText(newfuck + "%", 670, 957.5)}
 
         ctx.font="300 30px Montserrat"
-        ctx.fillText("8values.github.io", 780, 60)
+        ctx.fillText("g4meth.github.io/genvalues", 780, 60)
         ctx.fillText(version, 780, 90)
         ctx.textAlign="center"
-        ctx.fillText("Growth Axis: " + document.getElementById("growth-label").innerHTML, 400, 175)
-        ctx.fillText("Political Involvement Axis: " + document.getElementById("involvement-label").innerHTML, 400, 295)
-        ctx.fillText("Mod Purge Axis: " + document.getElementById("purge-label").innerHTML, 400, 415)
-        ctx.fillText("Culture Axis: " + document.getElementById("culture-label").innerHTML, 400, 535)
-        ctx.fillText("Government Structure Axis: " + document.getElementById("government-label").innerHTML, 400, 655)
-        ctx.fillText("Political Culture Axis: " + document.getElementById("seriousness-label").innerHTML, 400, 775)
-		ctx.fillText("History Axis: " + document.getElementById("history-label").innerHTML, 400, 895)
+        ctx.fillText("Growth Axis: " + document.getElementById("growth-label").innerHTML, 400, 175, 760)
+        ctx.fillText("Political Involvement Axis: " + document.getElementById("involvement-label").innerHTML, 400, 295, 760)
+        ctx.fillText("Mod Purge Axis: " + document.getElementById("purge-label").innerHTML, 400, 415, 760)
+        ctx.fillText("Culture Axis: " + document.getElementById("culture-label").innerHTML, 400, 535, 760)
+        ctx.fillText("Government Power Axis: " + document.getElementById("government-label").innerHTML, 400, 655, 760)
+        ctx.fillText("Larp Axis: " + document.getElementById("seriousness-label").innerHTML, 400, 775, 760)
+        ctx.fillText("History Axis: " + document.getElementById("history-label").innerHTML, 400, 895, 760)
 
         document.getElementById("banner").src = c.toDataURL();
     }
