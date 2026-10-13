@@ -12,7 +12,7 @@ ideologies = [
         }
     },
 	{
-        "name": "Left-Mussolinism 𓌏▌",
+        "name": "Radical Islamist 🟩",
         "stats": {
             "grow": 65,
             "invo": 65,
@@ -108,7 +108,7 @@ ideologies = [
         }
     },
 	{
-        "name": "Classical Fascism 𓌏▌",
+        "name": "Former Democrat who is now politically homeless",
         "stats": {
             "grow": 30,
             "invo": 80,
